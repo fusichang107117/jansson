@@ -3,8 +3,8 @@ EXTRA_DIST = jansson.def
 include_HEADERS = jansson.h
 nodist_include_HEADERS = jansson_config.h
 
-lib_LTLIBRARIES = libjansson.la
-libjansson_la_SOURCES = \
+noinst_LIBRARIES = libjansson.a
+libjansson_a_SOURCES = \
 	dump.c \
 	error.c \
 	hashtable.c \
@@ -21,7 +21,7 @@ libjansson_la_SOURCES = \
 	utf.c \
 	utf.h \
 	value.c
-libjansson_la_LDFLAGS = \
+libjansson_a_LDFLAGS = \
 	-no-undefined \
 	-export-symbols-regex '^json_' \
 	-version-info 15:0:11 \
